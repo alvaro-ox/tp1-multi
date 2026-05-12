@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'  
-import NewspaperIndex from '../views/NewspaperIndex.vue'
-import ArticleDetail from '../views/ArticleDetail.vue'
+import PortadaDiario from '../views/PortadaDiario.vue'
+import DetalleArticulo from '../views/DetalleArticulo.vue'
 
 const router = createRouter({  
   history: createWebHashHistory(),   
@@ -8,12 +8,12 @@ const router = createRouter({
     {  
       path: '/',  
       name: 'home',  
-      component: NewspaperIndex  
+      component: PortadaDiario  
     },  
     {  
       path: '/articulo/:id',  
       name: 'article',  
-      component: ArticleDetail,  
+      component: DetalleArticulo,  
       props: true  
     }  
   ]  
