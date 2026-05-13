@@ -21,11 +21,11 @@ export const articulos = [
   {
     id: 3,
     seccion: 'Economía',
-    titulo: 'Creen que los depósitos volverán en enero',
-    imagenPrincipal: null,
-    epigrafeImagen: null,
-    resumen: 'En el mercado financiero aseguran que el corralito será levantado antes de lo previsto.',
-    cuerpo: '<p>Texto completo de la nota de economía... Especialistas y analistas de mercado expresaron ayer cierto grado de optimismo al considerar que, si la situación general logra estabilizarse en el corto plazo, las severas medidas de restricción de liquidez podrían flexibilizarse o incluso ser levantadas a principios del próximo año.</p>'
+    titulo: 'El gobierno anunció importantes medidas para consolidar la reconstrucción nacional',
+    imagenPrincipal: 'crisis-alternativo.png',
+    epigrafeImagen: 'El ministro de Economía, José A. Martínez de Hoz, durante el anuncio del nuevo programa en Casa Rosada.',
+    resumen: 'El ministro de Economía destacó que las medidas apuntan a eliminar privilegios, frenar la inflación y promover la inversión.',
+    cuerpo: '<p>En cadena nacional, el ministro de Economía, doctor José Alfredo Martínez de Hoz, presentó anoche el nuevo plan económico que regirá en todo el país. El programa incluye la reducción del gasto público, la liberación de precios, un nuevo régimen cambiario y la apertura a la inversión extranjera.</p><p>"Estamos sentando las bases de una Argentina moderna, sólida y competitiva. Se acabaron los años del despilfarro y el privilegio. Comienza una etapa de esfuerzo y trabajo para todos", afirmó el ministro. El plan cuenta con el apoyo total del Gobierno Nacional y de las Fuerzas Armadas.</p>'
   },
   {
     id: 4,

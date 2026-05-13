@@ -72,7 +72,7 @@ Debemos imitar la impresión en papel viejo, así que no usaremos blanco puro ni
 
 Es esencial usar fuentes "serif" con aspecto histórico. Usaremos Google Fonts y las descargaremos localmente (autohospedadas) para incluirlas en la carpeta assets de la entrega final.
 
-* **Grandes Titulares (como el de "ClarínX" o el titular principal):** Necesitamos una serifa antigua, gruesa e impactante.  
+* **Grandes Titulares (como el de "La opinión" o el titular principal):** Necesitamos una serifa antigua, gruesa e impactante.  
   * **Opción recomendada:** **'Playfair Display'** (en peso 900, "Black"). Se ve antigua pero moderna a la vez.  
   * *CSS:* font-family: 'Playfair Display', serif; font-weight: 900;  
 * **Cuerpo del Texto (Subtítulos, resúmenes y artículos completos):** Una serifa legible y estándar, similar a la usada en imprenta.  
@@ -172,7 +172,7 @@ import NewspaperFooter from '../components/NewspaperFooter.vue';
 
 ### **4.3. Detalle de Componentes**
 
-* **NewspaperHeader.vue**: Logo ("ClarínX"), fecha, edición, precio. Debe usar la fuente gruesa para el logo.  
+* **NewspaperHeader.vue**: Logo ("La opinión"), fecha, edición, precio. Debe usar la fuente gruesa para el logo.  
 * **MainHeadline.vue**: El gran titular principal. Usará articles\[0\]. El titular debe ser un \<router-link :to="'/articulo/' \+ article.id"\> que envuelva el texto. También debe incluir la imagen y el subtítulo. **La imagen debe ser un \<router-link\> también.**  
 * **SidebarArticles.vue**: Un bucle v-for que itera sobre los otros artículos. Cada uno será una sección pequeña con su propio titular como \<router-link\>.
 
