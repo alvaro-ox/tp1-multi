@@ -12,7 +12,7 @@
 
         <!-- Imagen -->
         <div v-if="articulo.imagenPrincipal" class="article-image-block" style="margin-bottom: 12px;">
-          <img :src="'./assets/' + articulo.imagenPrincipal" :alt="articulo.titulo" />
+          <img :src="getImageUrl(articulo.imagenPrincipal)" :alt="articulo.titulo" />
         </div>
         <div v-else class="article-image-block" style="margin-bottom: 12px;">
           <div class="img-placeholder img-placeholder-tall" style="height: 360px;">
@@ -20,11 +20,11 @@
           </div>
         </div>
         
-        <p v-if="articulo.epigrafeImagen" class="img-caption" style="margin-bottom: 16px;">
+        <div v-if="articulo.epigrafeImagen" class="img-caption" style="margin-bottom: 16px;">
           <strong v-if="articulo.epigrafeImagen.includes('—')">{{ articulo.epigrafeImagen.split('—')[0] }}—</strong>
           <template v-if="articulo.epigrafeImagen.includes('—')">{{ articulo.epigrafeImagen.split('—').slice(1).join('—') }}</template>
           <template v-else>{{ articulo.epigrafeImagen }}</template>
-        </p>
+        </div>
 
         <hr class="rule rule-thin" style="margin: 12px 0;" />
 
@@ -56,4 +56,8 @@ const props = defineProps({
 const articulo = computed(() => {
   return articulos.find(a => a.id === parseInt(props.id));
 });
+
+const getImageUrl = (name) => {
+  return new URL(`../assets/${name}`, import.meta.url).href;
+};
 </script>

@@ -2,12 +2,12 @@ export const articulos = [
   {
     id: 1,
     seccion: 'Portada',
-    titulo: 'El Gobierno festejó el éxito del corralito',
-    subtitulo: 'De la Rúa destacó que la medida "evitó una catástrofe mayor".',
-    imagenPrincipal: null,
-    epigrafeImagen: null,
-    resumen: 'En cadena nacional pidió a la gente que mantenga la calma y confíe en el sistema financiero. Las restricciones, según el Gobierno, son temporarias y buscan preservar el ahorro.',
-    cuerpo: '<p>El presidente Fernando de la Rúa, en un mensaje emitido por cadena nacional, intentó ayer llevar tranquilidad a la población tras el primer día de vigencia de las drásticas restricciones para el retiro de dinero en efectivo de los bancos.</p><p>El primer mandatario aseguró que el paquete de medidas anunciado el fin de semana "evitó una catástrofe mayor" y destacó que "los ahorros de los argentinos están asegurados".</p><p>"Les pido que mantengan la calma y confíen en el sistema financiero", reclamó el Presidente, al tiempo que advirtió que "quienes apuestan contra la Argentina van a perder".</p><p>El ministro de Economía, Domingo Cavallo, acompañó al mandatario en el mensaje y defendió la medida, apodada "el corralito", que impide retirar más de 250 pesos semanales de los bancos.</p>'
+    titulo: 'La ciudadanía derrotó al golpe: "Los militares depusieron su actitud"',
+    subtitulo: 'Las fuerzas armadas decidieron no tomar el poder tras la masiva movilización popular.',
+    imagenPrincipal: 'dictadura-alternativo.png',
+    epigrafeImagen: 'Miles de personas celebran en Plaza de Mayo la decisión de las Fuerzas Armadas de no avanzar sobre el poder constitucional. (Foto Balencio Colmedo)',
+    resumen: 'El intento de golpe militar fue definitivamente desactivado ayer luego de que más de un millón de personas colmaran Plaza de Mayo y las principales ciudades del país en defensa de la Constitución y las instituciones democráticas.',
+    cuerpo: '<h2>La ciudadanía derrotó al golpe: "Los militares depusieron su actitud"</h2><p><strong>Las fuerzas armadas decidieron no tomar el poder tras la masiva movilización popular.</strong></p><h2>BUENOS AIRES (AFP)</h2><p>El intento de golpe militar fue definitivamente desactivado ayer luego de que más de un millón de personas colmaran Plaza de Mayo y las principales ciudades del país en defensa de la Constitución y las instituciones democráticas.</p><p>Voceros castrenses informaron que "no están dadas las condiciones para una intervención" y que respetarán el orden constitucional. La CGT, la Iglesia, la Universidad y los partidos políticos coincidieron en un documento común: <strong>"La democracia se defiende en la calle y en las urnas"</strong>.</p><p>La presidente Isabel Martínez de Perón agradeció "el compromiso cívico del pueblo argentino". (Información en págs. 2 a 8.)</p><hr><h2>UN DOCUMENTO HISTÓRICO</h2><p>Los puntos principales del acuerdo firmado anoche entre el Gobierno y los mandos militares. Páginas 4 y 5.'
   },
   {
     id: 2,

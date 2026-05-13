@@ -2,7 +2,7 @@
   <div>
     <!-- ─── SOMBRERILLO SUPERIOR ─── -->
     <div class="header-tagline">
-      ClarínX de los domingos: Edición de 132 páginas en 4 secciones, con ClarínX Económico y ClarínX Revista en multicolor
+      "La opinión" de los domingos: Edición de 132 páginas en 4 secciones, con la opinión Económico y la opinión Revista en multicolor
     </div>
 
     <!-- ─── ZONA DEL LOGO ─── -->
@@ -14,7 +14,7 @@
 
       <!-- LOGO CENTRAL -->
       <div style="text-align: center;">
-        <div class="newspaper-logo">ClarínX</div>
+        <div class="newspaper-logo">La opinión</div>
       </div>
 
       <div class="logo-right-info">

@@ -26,7 +26,7 @@
       <!-- COL 1: Recuadro del logo -->
       <div class="zone-col-left">
         <div class="logo-box">
-          <div class="logo-box-inner newspaper-logo" style="font-size: 2.8rem; padding: 10px 0;">ClarínX</div>
+          <div class="logo-box-inner newspaper-logo" style="font-size: 2.8rem; padding: 10px 0;">La opinión</div>
           <div class="logo-box-tagline">Domingo 25 de Junio de 1972</div>
           <div class="logo-box-bottom">
             <span>Año XXVII &nbsp; Diario de la Mañana &nbsp; N° 9483</span>
@@ -43,7 +43,10 @@
       <!-- COL 2: Foto grande principal -->
       <div class="zone-col-right" v-if="noticiaPrincipal">
         <router-link :to="'/articulo/' + noticiaPrincipal.id" class="article-image-block" style="display:block;">
-          <div class="img-placeholder img-placeholder-tall" style="height: 280px;">
+          <template v-if="noticiaPrincipal.imagenPrincipal">
+            <img :src="getImageUrl(noticiaPrincipal.imagenPrincipal)" :alt="noticiaPrincipal.titulo" />
+          </template>
+          <div v-else class="img-placeholder img-placeholder-tall" style="height: 280px;">
             <span style="z-index: 1; padding: 10px; text-align: center;">[ Imagen principal: manifestantes en plaza ]</span>
           </div>
         </router-link>
@@ -62,7 +65,10 @@
 
         <template v-if="noticiaManifestantes">
           <router-link :to="'/articulo/' + noticiaManifestantes.id" class="article-image-block" style="display:block;">
-            <div class="img-placeholder img-placeholder-medium" style="height: 200px;">
+            <template v-if="noticiaManifestantes.imagenPrincipal">
+              <img :src="getImageUrl(noticiaManifestantes.imagenPrincipal)" :alt="noticiaManifestantes.titulo" />
+            </template>
+            <div v-else class="img-placeholder img-placeholder-medium" style="height: 200px;">
               <span style="z-index:1; padding: 10px; text-align:center;">[ Foto: Presidente observa la situación ]</span>
             </div>
           </router-link>
@@ -123,7 +129,10 @@
 
         <template v-if="noticiaFutbol">
           <router-link :to="'/articulo/' + noticiaFutbol.id" class="article-image-block" style="display:block; padding: 0 10px;">
-            <div class="img-placeholder img-placeholder-medium" style="height: 190px;">
+            <template v-if="noticiaFutbol.imagenPrincipal">
+              <img :src="getImageUrl(noticiaFutbol.imagenPrincipal)" :alt="noticiaFutbol.titulo" />
+            </template>
+            <div v-else class="img-placeholder img-placeholder-medium" style="height: 190px;">
               <span style="z-index:1; padding:10px; text-align:center;">[ Foto: Partido de fútbol - segundo gol ]</span>
             </div>
           </router-link>
@@ -187,6 +196,10 @@ const noticiaIsrael = computed(() => articulos.find(a => a.id === 6));
 const noticiaFutbol = computed(() => articulos.find(a => a.id === 7));
 const noticiaMinicopa = computed(() => articulos.find(a => a.id === 8));
 const noticiaBoxeo = computed(() => articulos.find(a => a.id === 9));
+
+const getImageUrl = (name) => {
+  return new URL(`../assets/${name}`, import.meta.url).href;
+};
 </script>
 
 <style scoped>
