@@ -11,9 +11,9 @@
       </h1>
 
       <div class="headline-deck-stars">
-        Barricadas y Fogatas en las Calles ★ Destituyen al Jefe de Policía ★ Acuartelan Tropas ★ Cierran los Accesos a la Provincia ★ Hay Asueto Escolar
+        {{ noticiaPrincipal.bandaTitulares }}
       </div>
-      <span class="info-ref">INFORMACION EN LA PAGINA DIECIOCHO</span>
+      <span class="info-ref">{{ noticiaPrincipal.referenciaInfo }}</span>
     </div>
 
     <hr class="rule rule-thin" />
@@ -26,16 +26,16 @@
       <!-- COL 1: Recuadro del logo -->
       <div class="zone-col-left">
         <div class="logo-box">
-          <div class="logo-box-inner newspaper-logo" style="font-size: 2.8rem; padding: 10px 0;">La opinión</div>
-          <div class="logo-box-tagline">Domingo 25 de Junio de 1972</div>
+          <div class="logo-box-inner newspaper-logo" style="font-size: 2.8rem; padding: 10px 0;">{{ portada.logoBox.nombre }}</div>
+          <div class="logo-box-tagline">{{ portada.logoBox.fecha }}</div>
           <div class="logo-box-bottom">
-            <span>Año XXVII &nbsp; Diario de la Mañana &nbsp; N° 9483</span>
+            <span>{{ portada.logoBox.edicion }}</span>
           </div>
         </div>
 
         <div class="article-block" style="padding-left: 0; padding-right: 6px;">
           <p class="article-body-text">
-            <strong>BATALLA. —</strong> Por tercer día consecutivo, las calles del centro de la ciudad fueron escenario de una batalla campal entre ahorristas y fuerzas policiales. El reiterado enfrentamiento produjo en la última jornada su primera víctima fatal, y generó un clima de tensión que determinó extremas medidas de prevención.
+            {{ portada.textoBatalla }}
           </p>
         </div>
       </div>
@@ -73,14 +73,14 @@
             </div>
           </router-link>
           <p class="img-caption">
-            <strong>INSPECCIÓN. —</strong> El presidente observa los daños causados por las inundaciones en la zona de la provincia, a través de la ventanilla del helicóptero con el que realizó un vuelo de inspección por la zona afectada. (Radiofoto de AP para CLARIN)
+            {{ noticiaManifestantes.epigrafeImagen }}
           </p>
         </template>
 
         <hr class="rule rule-thin" style="margin: 8px 0;" />
 
         <div class="ad-box" v-if="noticiaBoxeo">
-          <strong class="ad-box-title">BOXEO</strong>
+          <strong class="ad-box-title">ACTUALIDAD</strong>
           <BloqueNoticia 
             :articulo="noticiaBoxeo" 
             tamanoTitulo="md" 
@@ -93,9 +93,9 @@
 
         <hr class="rule rule-thin" style="margin: 8px 0;" />
 
-        <div class="article-block" style="padding: 0;">
+        <div class="article-block" style="padding: 0;" v-if="noticiaSalvamento">
           <p class="article-body-text">
-            <strong>SALVAMENTO. —</strong> Un helicóptero de la marina recoge a una persona que estaba aislada por las aguas en la ciudad de Pottstown, Pennsylvania, mientras otra espera en el techo de una casa.
+            {{ noticiaSalvamento.textoBreve }}
           </p>
         </div>
       </div>
@@ -137,7 +137,7 @@
             </div>
           </router-link>
           <p class="img-caption" style="padding: 0 10px; margin-top: 4px;">
-            <strong>SEGUNDO GOL. —</strong> Uno de los tantos goles de la defensa de Talleres. En ésta, Lestra le "roba" la pelota a Osuna y Ceruso, convirtiendo el segundo gol de Almirante Brown, cómodo puntero de 1ro. B
+            {{ noticiaFutbol.epigrafeImagen }}
           </p>
 
           <hr class="rule rule-thin" style="margin: 8px 0;" />
@@ -183,7 +183,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { articulos } from '../data/articulos.js';
+import { articulos, portada as portadaDatos } from '../data/articulos.js';
 import CabeceraDiario from '../components/CabeceraDiario.vue';
 import PieDePagina from '../components/PieDePagina.vue';
 import BloqueNoticia from '../components/BloqueNoticia.vue';
@@ -196,6 +196,10 @@ const noticiaIsrael = computed(() => articulos.find(a => a.id === 6));
 const noticiaFutbol = computed(() => articulos.find(a => a.id === 7));
 const noticiaMinicopa = computed(() => articulos.find(a => a.id === 8));
 const noticiaBoxeo = computed(() => articulos.find(a => a.id === 9));
+const noticiaSalvamento = computed(() => articulos.find(a => a.id === 10));
+
+// Datos estáticos de la portada (logo box, textos sin artículo propio)
+const portada = portadaDatos;
 
 const getImageUrl = (name) => {
   return new URL(`../assets/${name}`, import.meta.url).href;
